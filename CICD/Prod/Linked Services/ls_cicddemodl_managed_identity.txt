@@ -1,0 +1,11 @@
+{
+    "name": "ls_cicddemodl_managed_identity",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "annotations": [],
+        "type": "AzureBlobFS",
+        "typeProperties": {
+            "url": "https://prodcicddemodly.dfs.core.windows.net/"
+        }
+    }
+}

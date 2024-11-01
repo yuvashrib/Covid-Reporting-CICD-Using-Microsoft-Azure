@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "value": "prod-ci-cd-y-demo-adf"
+        },
+        "ls_cicddemodl_managed_identity_properties_typeProperties_url": {
+            "value": "https://prodcicddemodly.dfs.core.windows.net/"
+        }
+    }
+}
