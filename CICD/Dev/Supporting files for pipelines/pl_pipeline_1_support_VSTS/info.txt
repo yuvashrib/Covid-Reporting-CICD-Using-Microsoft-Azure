@@ -1,0 +1,6 @@
+selected resource name:		pl_pipeline_1
+selected resource type:		pipeline
+factory name:			dev-ci-cd-y-demo-adf
+factory location:		centralindia
+subscription id:		a725f0dd-fba5-4060-9d55-a94cc6a67d96
+time of download (UTC):		Fri, 01 Nov 2024 11:02:58 GMT
