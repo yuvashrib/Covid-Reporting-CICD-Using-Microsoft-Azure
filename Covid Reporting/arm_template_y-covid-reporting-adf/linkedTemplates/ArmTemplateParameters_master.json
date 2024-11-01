@@ -1,0 +1,48 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "value": "y-covid-reporting-adf"
+        },
+        "ls_yblob_covidr_sa_connectionString": {
+            "value": ""
+        },
+        "ls_y_adls_covidr_accountKey": {
+            "value": ""
+        },
+        "ls_covidreporting_databricks_accessToken": {
+            "value": ""
+        },
+        "ls_sqldb_cases_and_deaths_password": {
+            "value": ""
+        },
+        "ls_y_adls_covidr_properties_typeProperties_url": {
+            "value": "https://covidreportingdly.dfs.core.windows.net/"
+        },
+        "ls_http_ecdc_properties_typeProperties_url": {
+            "value": "@{linkedService().scr_base_url}"
+        },
+        "ls_covidreporting_databricks_properties_typeProperties_existingClusterId": {
+            "value": "1029-151621-lzpyg2dd"
+        },
+        "ls_sqldb_cases_and_deaths_properties_typeProperties_server": {
+            "value": "covidsrvy.database.windows.net"
+        },
+        "ls_sqldb_cases_and_deaths_properties_typeProperties_database": {
+            "value": "coviddby"
+        },
+        "ls_sqldb_cases_and_deaths_properties_typeProperties_userName": {
+            "value": "adm"
+        },
+        "trigger1_properties_typeProperties_scope": {
+            "value": "/subscriptions/a725f0dd-fba5-4060-9d55-a94cc6a67d96/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/ycovidreportingsa"
+        },
+        "containerUri": {
+            "value": ""
+        },
+        "containerSasToken": {
+            "value": ""
+        }
+    }
+}

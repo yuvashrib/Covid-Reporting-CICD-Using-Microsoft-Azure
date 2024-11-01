@@ -1,0 +1,139 @@
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "factoryName": {
+            "type": "string",
+            "metadata": "Data Factory name",
+            "defaultValue": "y-covid-reporting-adf"
+        },
+        "ls_yblob_covidr_sa_connectionString": {
+            "type": "secureString",
+            "metadata": "Secure string for 'connectionString' of 'ls_yblob_covidr_sa'"
+        },
+        "ls_y_adls_covidr_accountKey": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accountKey' of 'ls_y_adls_covidr'"
+        },
+        "ls_covidreporting_databricks_accessToken": {
+            "type": "secureString",
+            "metadata": "Secure string for 'accessToken' of 'ls_covidreporting_databricks'"
+        },
+        "ls_sqldb_cases_and_deaths_password": {
+            "type": "secureString",
+            "metadata": "Secure string for 'password' of 'ls_sqldb_cases_and_deaths'"
+        },
+        "ls_y_adls_covidr_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "https://covidreportingdly.dfs.core.windows.net/"
+        },
+        "ls_http_ecdc_properties_typeProperties_url": {
+            "type": "string",
+            "defaultValue": "@{linkedService().scr_base_url}"
+        },
+        "ls_covidreporting_databricks_properties_typeProperties_existingClusterId": {
+            "type": "string",
+            "defaultValue": "1029-151621-lzpyg2dd"
+        },
+        "ls_sqldb_cases_and_deaths_properties_typeProperties_server": {
+            "type": "string",
+            "defaultValue": "covidsrvy.database.windows.net"
+        },
+        "ls_sqldb_cases_and_deaths_properties_typeProperties_database": {
+            "type": "string",
+            "defaultValue": "coviddby"
+        },
+        "ls_sqldb_cases_and_deaths_properties_typeProperties_userName": {
+            "type": "string",
+            "defaultValue": "adm"
+        },
+        "trigger1_properties_typeProperties_scope": {
+            "type": "string",
+            "defaultValue": "/subscriptions/a725f0dd-fba5-4060-9d55-a94cc6a67d96/resourceGroups/covid-reporting-rg/providers/Microsoft.Storage/storageAccounts/ycovidreportingsa"
+        },
+        "containerUri": {
+            "type": "string",
+            "metadata": "URI to storage account containing linked ARM templates"
+        },
+        "containerSasToken": {
+            "type": "string",
+            "metadata": "Sas token to storage account containing linked ARM templates"
+        }
+    },
+    "variables": {
+        "factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+    },
+    "resources": [
+        {
+            "name": "y-covid-reporting-adf_ArmTemplate_0",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2024-03-01",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "factoryName": {
+                        "value": "[parameters('factoryName')]"
+                    },
+                    "ls_yblob_covidr_sa_connectionString": {
+                        "value": "[parameters('ls_yblob_covidr_sa_connectionString')]"
+                    },
+                    "ls_y_adls_covidr_accountKey": {
+                        "value": "[parameters('ls_y_adls_covidr_accountKey')]"
+                    },
+                    "ls_covidreporting_databricks_accessToken": {
+                        "value": "[parameters('ls_covidreporting_databricks_accessToken')]"
+                    },
+                    "ls_sqldb_cases_and_deaths_password": {
+                        "value": "[parameters('ls_sqldb_cases_and_deaths_password')]"
+                    },
+                    "ls_y_adls_covidr_properties_typeProperties_url": {
+                        "value": "[parameters('ls_y_adls_covidr_properties_typeProperties_url')]"
+                    },
+                    "ls_http_ecdc_properties_typeProperties_url": {
+                        "value": "[parameters('ls_http_ecdc_properties_typeProperties_url')]"
+                    },
+                    "ls_covidreporting_databricks_properties_typeProperties_existingClusterId": {
+                        "value": "[parameters('ls_covidreporting_databricks_properties_typeProperties_existingClusterId')]"
+                    },
+                    "ls_sqldb_cases_and_deaths_properties_typeProperties_server": {
+                        "value": "[parameters('ls_sqldb_cases_and_deaths_properties_typeProperties_server')]"
+                    },
+                    "ls_sqldb_cases_and_deaths_properties_typeProperties_database": {
+                        "value": "[parameters('ls_sqldb_cases_and_deaths_properties_typeProperties_database')]"
+                    },
+                    "ls_sqldb_cases_and_deaths_properties_typeProperties_userName": {
+                        "value": "[parameters('ls_sqldb_cases_and_deaths_properties_typeProperties_userName')]"
+                    },
+                    "trigger1_properties_typeProperties_scope": {
+                        "value": "[parameters('trigger1_properties_typeProperties_scope')]"
+                    }
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "name": "y-covid-reporting-adf_ArmTemplate_1",
+            "type": "Microsoft.Resources/deployments",
+            "apiVersion": "2024-03-01",
+            "properties": {
+                "mode": "incremental",
+                "templateLink": {
+                    "uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "factoryName": {
+                        "value": "[parameters('factoryName')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Resources/deployments', 'y-covid-reporting-adf_ArmTemplate_0')]"
+            ]
+        }
+    ]
+}
