@@ -1,0 +1,34 @@
+{
+    "name": "pl_hospital_admissions",
+    "properties": {
+        "activities": [
+            {
+                "name": "Data Flow Hospital Admissions",
+                "type": "ExecuteDataFlow",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "dataflow_hospital_admisions",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2024-10-28T13:21:36Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,34 @@
+{
+    "name": "pl_data_transformation",
+    "properties": {
+        "activities": [
+            {
+                "name": "TransformationDataFlow",
+                "type": "ExecuteDataFlow",
+                "dependsOn": [],
+                "policy": {
+                    "timeout": "0.12:00:00",
+                    "retry": 0,
+                    "retryIntervalInSeconds": 30,
+                    "secureOutput": false,
+                    "secureInput": false
+                },
+                "userProperties": [],
+                "typeProperties": {
+                    "dataflow": {
+                        "referenceName": "dataflow_cases_and_Deaths",
+                        "type": "DataFlowReference"
+                    },
+                    "compute": {
+                        "coreCount": 8,
+                        "computeType": "General"
+                    },
+                    "traceLevel": "Fine"
+                }
+            }
+        ],
+        "annotations": [],
+        "lastPublishTime": "2024-10-28T11:34:45Z"
+    },
+    "type": "Microsoft.DataFactory/factories/pipelines"
+}
