@@ -1,0 +1,23 @@
+{
+    "now": "2024-11-01T11:08:05.499Z",
+    "perfNow": 2053187,
+    "diagnosticCorrelation": "a07f39b8-7627-4bb7-82db-11ee7d93fb1f",
+    "source": "DownloadSupportFiles",
+    "environment": {
+        "productName": "adf",
+        "buildVersion": "1.0.101424.2",
+        "environmentType": 3,
+        "resourceName": "test-ci-cd-y-demo-adf",
+        "resourceRegion": "centralindia",
+        "resourceGroup": "test-ci-cd-demo-rg",
+        "subscriptionId": "a725f0dd-fba5-4060-9d55-a94cc6a67d96",
+        "sessionId": "mz9V6VdBOQFRSCke1Tx1RO",
+        "operationId": "",
+        "gitType": "live",
+        "loggingKey": "b238d59f-6859-4caf-b85e-89fd031c8ea1"
+    },
+    "additionalInfo": {
+        "selectedResource": "ds_population_source",
+        "selectedResourceType": "dataset"
+    }
+}
