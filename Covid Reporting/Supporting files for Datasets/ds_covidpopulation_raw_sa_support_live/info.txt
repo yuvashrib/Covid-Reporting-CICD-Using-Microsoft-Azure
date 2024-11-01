@@ -1,0 +1,6 @@
+selected resource name:		ds_covidpopulation_raw_sa
+selected resource type:		dataset
+factory name:			y-covid-reporting-adf
+factory location:		centralindia
+subscription id:		a725f0dd-fba5-4060-9d55-a94cc6a67d96
+time of download (UTC):		Thu, 31 Oct 2024 18:54:21 GMT

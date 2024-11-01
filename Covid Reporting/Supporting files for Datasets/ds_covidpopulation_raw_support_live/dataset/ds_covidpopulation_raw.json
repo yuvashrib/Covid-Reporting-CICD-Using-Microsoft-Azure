@@ -1,0 +1,24 @@
+{
+    "name": "ds_covidpopulation_raw",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "ls_y_adls_covidr",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "DelimitedText",
+        "typeProperties": {
+            "location": {
+                "type": "AzureBlobFSLocation",
+                "fileName": "population_by_age_Tsv",
+                "fileSystem": "raw"
+            },
+            "columnDelimiter": "\t",
+            "escapeChar": "\\",
+            "firstRowAsHeader": true,
+            "quoteChar": "\""
+        },
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

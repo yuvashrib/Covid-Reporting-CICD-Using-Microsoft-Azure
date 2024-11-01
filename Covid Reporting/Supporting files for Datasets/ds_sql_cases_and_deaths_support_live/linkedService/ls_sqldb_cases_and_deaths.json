@@ -1,0 +1,17 @@
+{
+    "name": "ls_sqldb_cases_and_deaths",
+    "type": "Microsoft.DataFactory/factories/linkedservices",
+    "properties": {
+        "annotations": [],
+        "type": "AzureSqlDatabase",
+        "typeProperties": {
+            "server": "covidsrvy.database.windows.net",
+            "database": "coviddby",
+            "encrypt": "mandatory",
+            "trustServerCertificate": false,
+            "authenticationType": "SQL",
+            "userName": "adm",
+            "encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDJGOUU4MTgyLThGNTUtNEI1NS1CMDAxLTFENTUyNUVDMDVCOF8wZDI5ZDFlNi05NzhhLTQyNmUtOTg2MC0wNWExNzNjMDc3OTMiDQp9"
+        }
+    }
+}
